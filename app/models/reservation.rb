@@ -7,22 +7,23 @@ class Reservation < ApplicationRecord
   validates :price, numericality: {greater_than: 0 }
   validates :negotiation_status, inclusion: STATUS
   validate :less_than, on: :create
-  validate :reservation_end, if: :greater_than_reservation_start
+  validate :greater_than_reservation_start, on: [:create, :update]
 
   private
 
   def greater_than_reservation_start
-    return false if reservation_end.nil? || reservation_start.nil?
+    return if reservation_end.nil? || reservation_start.nil?
 
-    return reservation_end < reservation_start
+    unless (reservation_end - reservation_start).positive?
+      errors.add(:reservation_end, 'the reservation_end should be greater than reservation_start')
+    end
   end
 
   def less_than
-    return false if people_in_reservation.nil?
+    return if people_in_reservation.nil?
 
     unless people_in_reservation <= ship.max_people
-      errors.add(:base, 'the number of people shoud be less or equal to the ammount allowed for this boat')
-    true
+      errors.add(:people_in_reservation, 'the number of people shoud be less or equal to the ammount allowed for this boat')
     end
   end
 end
