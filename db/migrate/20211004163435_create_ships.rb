@@ -5,7 +5,7 @@ class CreateShips < ActiveRecord::Migration[6.1]
       t.integer :max_people
       t.integer :min_price
       t.integer :max_price
-      t.string :type
+      t.string :ship_type
       t.string :location
 
       t.timestamps
