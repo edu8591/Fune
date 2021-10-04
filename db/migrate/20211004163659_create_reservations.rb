@@ -7,8 +7,8 @@ class CreateReservations < ActiveRecord::Migration[6.1]
       t.integer :rating
       t.text :review
       t.string :negotiation_status
-      t.date :reservation_start
-      t.date :reservation_end
+      t.datetime :reservation_start
+      t.datetime :reservation_end
 
       t.timestamps
     end

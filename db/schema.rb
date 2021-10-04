@@ -58,8 +58,8 @@ ActiveRecord::Schema.define(version: 2021_10_04_192145) do
     t.integer "rating"
     t.text "review"
     t.string "negotiation_status"
-    t.date "reservation_start"
-    t.date "reservation_end"
+    t.datetime "reservation_start"
+    t.datetime "reservation_end"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "people_in_reservation"
