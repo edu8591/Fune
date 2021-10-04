@@ -9,7 +9,7 @@ class CreateReservations < ActiveRecord::Migration[6.1]
       t.string :negotiation_status
       t.datetime :reservation_start
       t.datetime :reservation_end
-
+      t.integer :people_in_reservation
       t.timestamps
     end
   end

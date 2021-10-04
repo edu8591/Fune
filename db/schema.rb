@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_04_192145) do
+ActiveRecord::Schema.define(version: 2021_10_04_165106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,9 +60,9 @@ ActiveRecord::Schema.define(version: 2021_10_04_192145) do
     t.string "negotiation_status"
     t.datetime "reservation_start"
     t.datetime "reservation_end"
+    t.integer "people_in_reservation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "people_in_reservation"
     t.index ["ship_id"], name: "index_reservations_on_ship_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
@@ -76,7 +76,6 @@ ActiveRecord::Schema.define(version: 2021_10_04_192145) do
     t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "image_url"
     t.index ["user_id"], name: "index_ships_on_user_id"
   end
 
