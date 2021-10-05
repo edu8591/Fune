@@ -19,6 +19,10 @@ class ShipsController < ApplicationController
     end
   end
 
+  def show
+    @ship = Ship.find(params[:id])
+  end
+
   def ship_params
     params.require(:ship).permit(:max_people,:price, :ship_type, :latitude, :longitude, :name, :description, images: [])
   end
