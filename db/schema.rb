@@ -70,10 +70,12 @@ ActiveRecord::Schema.define(version: 2021_10_04_165106) do
   create_table "ships", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.integer "max_people"
-    t.integer "min_price"
-    t.integer "max_price"
+    t.integer "price"
     t.string "ship_type"
-    t.string "location"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "name"
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_ships_on_user_id"
