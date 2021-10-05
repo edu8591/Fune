@@ -1,7 +1,6 @@
 class ShipsController < ApplicationController
-
   def index
-    @ships = Ship.all
+    @ships = Ship.where(ship_slice)
   end
 
   def new
@@ -17,6 +16,10 @@ class ShipsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def ship_slice
+    params.permit(:max_people, :price, :ship_type, :name)
   end
 
   def ship_params
