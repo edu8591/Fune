@@ -4,11 +4,12 @@ class CreateShips < ActiveRecord::Migration[6.1]
 
       t.references :user, null: false, foreign_key: true
       t.integer :max_people
-      t.integer :min_price
-      t.integer :max_price
+      t.integer :price
       t.string :ship_type
-      t.string :location
-
+      t.float :latitude
+      t.float :longitude
+      t.string :name
+      t.string :description
       t.timestamps
     end
   end
