@@ -1,46 +1,71 @@
-<h2>NAVBAR</h2>
-<span><%= link_to "Places to browse", "#" %></span>
-<span><%= link_to "Experiences", "#" %></span>
-<span><%= link_to "Best places", "#" %></span>
 
-<div>
-  <h2>BANNER</h2>
-  <h1>Fune</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
-  <%= link_to "List of Ships:", "#" %>
+
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1465401180489-ceb5a34d8a63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2942&q=80);">
+  <div class="container">
+    <h1><strong>Fune</strong></h1>
+    <p>Change your life browsing the world.</p>
+    <%= link_to "List of Ships:", "#" %>
+  </div>
 </div>
 
-<div>
-  <h3>Explore new places</h3>
-    <% @ships.each do |ship| %>
-    <div>
-      <%= image_tag "", style:"" %>
-      <h4><%= ship.location%></h4>
+
+<div class="container">
+  <h3 class= "subtitle-homepage">Explore new places</h3>
+  <div class="country-cards-padre">
+    <div class="homepage-cards">
+      <%= image_tag "https://res.cloudinary.com/ddlmgs04n/image/upload/v1633465201/jose-llamas-lVRO7SAMtdU-unsplash_lelxra.jpg", style:"height: 80px; width: 60px; margin-left: 5px" %>
+      <h5>Lima,<strong> Perú</strong>.</h4>
     </div>
-    <% end %>
-</div>
-
-<div>
-  <h3>Travel depending on your needs</h3>
-    <% @ships.each do |ship| %>
-    <div>
-      <%= image_tag "", style:"" %>
-      <%= ship.ship_type %>
+    <div class="homepage-cards">
+      <%= image_tag "https://res.cloudinary.com/ddlmgs04n/image/upload/v1633462773/guille-pozzi-bInJ2wIkITo-unsplash_acfffr.jpg", style:"height: 80px; width: 60px; margin-left: 5px" %>
+      <h5>Bariloche,<strong> Argentina</strong>.</h5>
     </div>
+    <div class="homepage-cards">
+      <%= image_tag "https://res.cloudinary.com/ddlmgs04n/image/upload/v1633465201/jose-llamas-GYKzpv8jjoQ-unsplash_ciiwpv.jpg", style:"height: 80px; width: 60px; margin-left: 5px" %>
+     <h5>Galapagos,<strong> Ecuador</strong>.</h5>
+    </div>
+    <div class="homepage-cards">
+      <%= image_tag "https://res.cloudinary.com/ddlmgs04n/image/upload/v1633465402/sam-5qu17cF-Jv0-unsplash_g0g97u.jpg", style:"height: 80px; width: 60px; margin-left: 5px" %>
+      <h5>Río de Janeiro,<strong> Brazil</strong>.</h5>
+    </div>
+    <div class="homepage-cards">
+      <%= image_tag "https://res.cloudinary.com/ddlmgs04n/image/upload/v1633463113/nikldn-t-6GW8T6Jsc-unsplash_yhvkjw.jpg", style:"height: 80px; width: 60px; margin-left: 5px" %>
+      <h5>Buenaventura,<strong> Colombia</strong>.</h5>
+    </div>
+    <div class="homepage-cards">
+      <%= image_tag "https://res.cloudinary.com/ddlmgs04n/image/upload/v1633465403/marcelo-quinan-upywS5QFwr8-unsplash_am9qfa.jpg", style:"height: 80px; width: 60px; margin-left: 5px" %>
+      <h5>Montevideo,<strong> Uruguay</strong>.</h5>
+    </div>
+  </div>
+
+</div>
+
+<div class="container">
+  <h3 class= "subtitle-homepage">Travel depending on your needs</h3>
+  <div>
+    <% @ships.each do |ship| %>
+      <div>
+        <%= image_tag "", style:"" %>
+        <%= ship.ship_type %>
+      </div>
     <% end %>
+    </div>
 </div>
 
 
-<div>
-  <%= image_tag "", style:"" %>
-  <h5>Be the captain of the ship</h5>
-  <p>Share your boat to earn extra money and enjoy new opportunities</p>
-  <%= link_to "More information", "" %>
+<div class="container mini-banner-homepage" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.1)), url(https://res.cloudinary.com/ddlmgs04n/image/upload/v1633466855/nick-karvounis-keLEfEdxXYc-unsplash_ec0ghs.jpg); height: 500px; width: 1100px; border-radius: 12px">
+  <div class="promotion-banner-capitan">
+    <h5>Be the captain of the ship</h5>
+    <p>Share your boat to earn extra money and enjoy new opportunities</p>
+    <button type="button" class="btn btn-light">More information</button>
+  </div>
 </div>
 
 
-<div>
-  <h3>Best places to travell </h3>
+<div class="container">
+  <h3 class= "subtitle-homepage">Best places to travell </h3>
     <div>
       <%image_tag "",style:"" %>
       <h5>Brazil</h5>
