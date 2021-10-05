@@ -9,9 +9,4 @@ class User < ApplicationRecord
   validates :ssn, uniqueness: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
 end
-
-
-# ssn format validation accepts letter and not only numbers
-

@@ -4,7 +4,7 @@ class Reservation < ApplicationRecord
   belongs_to :ship
   has_one :invoice # has_many
   validates :price, :people_in_reservation, :reservation_start, :reservation_end, :negotiation_status, presence: true
-  validates :price, numericality: {greater_than: 0 }
+  validates :price, numericality: { greater_than: 0 }
   validates :negotiation_status, inclusion: STATUS
   validate :less_than, on: :create
   validate :greater_than_reservation_start, on: [:create, :update]
