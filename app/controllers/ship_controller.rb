@@ -1,2 +1,0 @@
-class ShipController < ApplicationController
-end
