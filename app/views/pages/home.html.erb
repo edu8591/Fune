@@ -1,2 +1,43 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h2>NAVBAR</h2>
+<span><%= link_to "Places to browse", "#" %></span>
+<span><%= link_to "Experiences", "#" %></span>
+<span><%= link_to "Best places", "#" %></span>
+
+<div>
+  <h2>BANNER</h2>
+  <h1>Fune</h1>
+  <p>Find me in app/views/pages/home.html.erb</p>
+  <%= link_to "List of Ships:", "#" %>
+</div>
+
+<div>
+  <h3>Explore new places</h3>
+    <% @ships.each do |ship| %>
+    <div>
+      <%= img_tag "#", style:"" %>
+      <h4><%= ship.location%></h4>
+    </div>
+    <% end %>
+</div>
+
+<div>
+  <h3>Travel depending on your needs</h3>
+    <% @ships.each do |ship| %>
+    <div>
+      <%= img_tag "#", style:"" %>
+      <%= ship.location %>
+    </div>
+    <% end %>
+</div>
+
+
+<div>
+  <%= img_tag "#", style:"" %>
+  <h5>Be the captain of the ship</h5>
+  <p>Share your boat to earn extra money and enjoy new opportunities</p>
+  <%= link_to "More information", "#" %>
+</div>
+
+<div>
+  <h2>FOOTER</h2>
+</div>
