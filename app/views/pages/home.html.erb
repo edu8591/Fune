@@ -25,7 +25,7 @@
     <% @ships.each do |ship| %>
     <div>
       <%= image_tag "", style:"" %>
-      <%= ship.location %>
+      <%= ship.ship_type %>
     </div>
   <% end %>
 </div>
@@ -37,6 +37,24 @@
   <p>Share your boat to earn extra money and enjoy new opportunities</p>
   <%= link_to "More information", "" %>
 </div>
+
+
+<div>
+  <h3>Best places to travell </h3>
+    <div>
+      <%image_tag "",style:"" %>
+      <h5>Brazil</h5>
+    </div>
+    <div>
+      <%image_tag "",style:"" %>
+      <h5>Ecuador</h5>
+    </div>
+    <div>
+      <%image_tag "",style:"" %>
+      <h5>Argentina</h5>
+    </div>
+</div>
+
 
 <div>
   <h2>FOOTER</h2>
