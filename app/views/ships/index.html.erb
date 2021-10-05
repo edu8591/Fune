@@ -1,0 +1,23 @@
+
+
+
+
+<div class="container">
+
+<%@ships.each do |ship|  %>
+
+  <div class="ship-card mt-3">
+    <img src="https://source.unsplash.com/featured/?yacht" />
+    <div class="card-ship-info">
+      <h2 class>ship name? o a title</h2>
+      <hr>
+      <p><strong>Price per day</strong>  $<%= ship.max_price %> </p>
+      <p><strong>Max people</strong> <%= ship.max_people %></p>
+      <p><strong>Located at</strong> <%= ship.location %></p>
+    </div>
+  </div>
+
+<% end %>
+
+</div>
+

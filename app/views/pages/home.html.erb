@@ -14,7 +14,7 @@
   <h3>Explore new places</h3>
     <% @ships.each do |ship| %>
     <div>
-      <%= img_tag "#", style:"" %>
+      <%= image_tag "", style:"" %>
       <h4><%= ship.location%></h4>
     </div>
     <% end %>
@@ -24,19 +24,37 @@
   <h3>Travel depending on your needs</h3>
     <% @ships.each do |ship| %>
     <div>
-      <%= img_tag "#", style:"" %>
-      <%= ship.location %>
+      <%= image_tag "", style:"" %>
+      <%= ship.ship_type %>
     </div>
     <% end %>
 </div>
 
 
 <div>
-  <%= img_tag "#", style:"" %>
+  <%= image_tag "", style:"" %>
   <h5>Be the captain of the ship</h5>
   <p>Share your boat to earn extra money and enjoy new opportunities</p>
-  <%= link_to "More information", "#" %>
+  <%= link_to "More information", "" %>
 </div>
+
+
+<div>
+  <h3>Best places to travell </h3>
+    <div>
+      <%image_tag "",style:"" %>
+      <h5>Brazil</h5>
+    </div>
+    <div>
+      <%image_tag "",style:"" %>
+      <h5>Ecuador</h5>
+    </div>
+    <div>
+      <%image_tag "",style:"" %>
+      <h5>Argentina</h5>
+    </div>
+</div>
+
 
 <div>
   <h2>FOOTER</h2>
