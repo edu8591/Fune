@@ -12,10 +12,14 @@
   justify-content: flex-start;
   align-items: center;
   height: 90px;
+  a {
+    color: black;
+  }
 }
 
-.homepage-cards > h5 {
+.homepage-cards { h5 {
   margin-left: 15px;
+}
 }
 
 .country-cards-padre {
@@ -28,6 +32,7 @@
 .mini-banner-homepage {
   background-size: cover;
   background-position: center;
+  margin-top: 60px;
 }
 
 .promotion-banner-capitan {
