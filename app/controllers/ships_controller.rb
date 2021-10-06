@@ -22,6 +22,15 @@ class ShipsController < ApplicationController
     end
   end
 
+  def show
+    @ship = Ship.find(params[:id])
+    @ship_images = @ship.images.all
+    @reservation = Reservation.new
+
+  end
+
+  private
+
   def ship_slice
     params.permit(:max_people, :price, :ship_type, :name)
   end
