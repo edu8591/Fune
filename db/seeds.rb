@@ -13,7 +13,7 @@ Ship.destroy_all
 User.destroy_all
 
 puts "creating users"
-user1 = User.create!(email:Faker::Internet.email, password:'123456789', ssn:Faker::IDNumber.valid, first_name:Faker::Name.first_name , last_name: Faker::Name.last_name  , phone_number:'0997079516', owner: true, country:'Ecuador', city: 'gye', address:'por ahi', birth_date: Date.new, gender: "male")
+user1 = User.create!(email:'eduardo@gmail.com', password:'123456789', ssn:Faker::IDNumber.valid, first_name:Faker::Name.first_name , last_name: Faker::Name.last_name  , phone_number:'0997079516', owner: true, country:'Ecuador', city: 'gye', address:'por ahi', birth_date: Date.new, gender: "male")
 user1_avatar = URI.open(Faker::Avatar.image)
 user1.avatar.attach({io:user1_avatar, filename:'avatar1', content_type:'image/png'})
 
