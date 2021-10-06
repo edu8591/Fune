@@ -3,15 +3,23 @@
 }
 
 .owner-info {
-	position: relative;
-	img {
-		position: absolute;
-		right: 20px;
-		top: 0;
-	}
+	width: 60%;
 	p {
 		font-weight: 700;
-		position: absolute;
+		font-size: 30px;
+
 		top: 5px;
+	}
+}
+
+.reservations {
+	box-shadow: 2px 2px 3px rgb(206, 206, 206);
+	border-radius: 15px;
+	width: 350px;
+	position: fixed;
+	top: 580px;
+	right: 15px;
+	h5 {
+		text-align: center;
 	}
 }

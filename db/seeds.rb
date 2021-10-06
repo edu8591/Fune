@@ -39,7 +39,10 @@ Ship.create!(user: user1, max_people: 10, price: 850, ship_type: 'party', name: 
 
 Ship.create!(user: user1, max_people: 8, price: 650, ship_type: 'party', name: "marsopa", description:"lindo velero para pasar buen fin de semana", longitude:Faker::Address.longitude, latitude: Faker::Address.latitude )
 
-Ship.create!(user: user1, max_people: 6, price: 450, ship_type: 'party', name: "la pinta", description:"lindo velero para pasar buen fin de semana", longitude:Faker::Address.longitude, latitude: Faker::Address.latitude )
+ship = Ship.create!(user: user1, max_people: 6, price: 450, ship_type: 'party', name: "la pinta", description:"lindo velero para pasar buen fin de semana", longitude:Faker::Address.longitude, latitude: Faker::Address.latitude )
+ship_pic = URI.open("https://images.unsplash.com/photo-1623881168429-dcc3b542f826?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8c2hpcHx8fHx8fDE2MzM0NjU0NTU&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600")
+ship_pic2 = URI.open("https://images.unsplash.com/photo-1527685609591-44b0aef2400b?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8c2hpcHx8fHx8fDE2MzM0NjU0ODA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600")
+ship.images.attach({io:ship_pic, filename:'ship_pic', content_type:'image/png'},{io:ship_pic2, filename:'ship_pic2', content_type:'image/png'})
 
 Ship.create!(user: user1, max_people: 20, price: 1500, ship_type: 'party', name: "la nina", description:"lindo velero para pasar buen fin de semana", longitude:Faker::Address.longitude, latitude: Faker::Address.latitude )
 

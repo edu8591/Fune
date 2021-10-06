@@ -21,6 +21,9 @@ class ShipsController < ApplicationController
 
   def show
     @ship = Ship.find(params[:id])
+    @ship_images = @ship.images.all
+    @reservation = Reservation.new
+
   end
 
   def ship_params
