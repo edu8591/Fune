@@ -14,6 +14,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :gender, inclusion: GENDERS
+  has_one_attached :avatar
 
   def real_address
     "#{address},#{city},#{country}"
