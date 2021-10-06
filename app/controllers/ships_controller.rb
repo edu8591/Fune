@@ -1,6 +1,10 @@
 class ShipsController < ApplicationController
   def index
-    @ships = Ship.where(ship_slice)
+    if params[:country].nil?
+      @ships = Ship.where(ship_slice)
+    else
+      @ships = Ship.near(params[:country], 100)
+    end
   end
 
   def new
