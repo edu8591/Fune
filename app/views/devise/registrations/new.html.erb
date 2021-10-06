@@ -28,6 +28,7 @@
     <%= f.input :country,
                 required: true %>
     <%= f.input :city, collection: [] %>
+    <%= f.input :owner, as: :boolean %>
     <%= f.input :address,
                 required: true %>
     <%= f.input :birth_date, as: :date, html5: true,
