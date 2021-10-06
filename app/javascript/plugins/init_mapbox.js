@@ -25,7 +25,6 @@ const initMapbox = () => {
       const temp = event.lngLat.wrap();
       lat.value = temp["lat"];
       lon.value = temp["lng"];
-      console.log(temp);
       currentMarker = new mapboxgl.Marker()
         .setLngLat([ temp["lng"],temp["lat"] ])
         .addTo(map);
