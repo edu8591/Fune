@@ -1,7 +1,6 @@
 class ShipsController < ApplicationController
-
   def index
-    @ships = Ship.all
+    @ships = Ship.where(ship_slice)
   end
 
   def new
@@ -24,6 +23,12 @@ class ShipsController < ApplicationController
     @ship_images = @ship.images.all
     @reservation = Reservation.new
 
+  end
+
+  private
+
+  def ship_slice
+    params.permit(:max_people, :price, :ship_type, :name)
   end
 
   def ship_params

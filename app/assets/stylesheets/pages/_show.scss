@@ -16,9 +16,8 @@
 	box-shadow: 2px 2px 3px rgb(206, 206, 206);
 	border-radius: 15px;
 	width: 350px;
-	position: fixed;
-	top: 580px;
-	right: 15px;
+	position: sticky;
+	top: 30px;
 	h5 {
 		text-align: center;
 	}
