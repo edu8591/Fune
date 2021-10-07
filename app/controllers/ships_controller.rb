@@ -3,7 +3,7 @@ class ShipsController < ApplicationController
     if params[:country].nil?
       @ships = Ship.where(ship_slice)
     else
-      @ships = Ship.near(params[:country], 100)
+      @ships = Ship.near(params[:country], 10000)
     end
   end
 
