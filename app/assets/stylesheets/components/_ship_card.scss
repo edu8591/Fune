@@ -1,32 +1,57 @@
 .ship-card {
 	overflow: hidden;
-	height: 120px;
+	height: 180px;
 	background: white;
-	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 2px 3px rgb(206, 206, 206);
 	display: flex;
 	align-items: center;
+  width: 700px;
+  border-radius: 8px;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
 
 	img {
 		height: 100%;
-		width: 120px;
+		width: 220px;
 		object-fit: cover;
+    margin-left: 10px;
 	}
 
 	h2 {
-		font-size: 16px;
-		font-weight: bold;
+		font-weight: 400;
 		margin: 0;
+    font-size: 35px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-family: inherit;
+
 	}
 
 	p {
-		font-size: 12px;
+		font-size: 14px;
 		line-height: 1.4;
 		opacity: 0.7;
 		margin-bottom: 0;
 		margin-top: 8px;
+
 	}
 
 	.card-ship-info {
-		padding: 16px;
+    padding: 20px;
+    margin-left: 10px;
 	}
 }
+.heart-icon {
+    position: relative;
+    top: -111px;
+    right: -406px;
+  }
+
+  .price {
+    position:relative;
+    right: -386px;
+    top: -20px;
+  }

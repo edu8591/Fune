@@ -7,14 +7,21 @@
 <%@ships.each do |ship|  %>
 
   <div class="ship-card mt-3">
+    <%= link_to ship_path(ship) do %>
     <img src="https://source.unsplash.com/featured/?yacht" />
     <div class="card-ship-info">
-      <h2 class><%= ship.name %></h2>
+      <h2 class><%= ship.name.capitalize %></h2>
       <hr>
-      <p><strong>Price per day</strong>  $<%= ship.price %> </p>
-      <p><strong>Max people</strong> <%= ship.max_people %></p>
-      <p><strong>Type:</strong> <%= ship.ship_type %></p>
+      <p><strong>Max people:</strong> <%= ship.max_people %></p>
+      <p><strong>Type:</strong> <%= ship.ship_type %></p></a>
+      <div class="heart-icon">
+        <i class="far fa-heart"></i>
+      </div>
+      <div class="price">
+        <p><strong>$</strong><%= ship.price %> </p>
+      </div>
     </div>
+    <% end %>
   </div>
 
 <% end %>
