@@ -1,7 +1,14 @@
 class ShipsController < ApplicationController
   def index
     if params[:country].nil?
-      @ships = policy_scope(Ship).where(ship_slice)
+      if params[:ship].nil?
+        @ships = policy_scope(Ship).where(ship_slice)
+        puts ship_slice
+      else
+        puts ship_slice_object
+        @ships = policy_scope(Ship).where(ship_slice_object)
+      end
+
     else
       @ships = policy_scope(Ship).near(params[:country], 10_000)
     end
@@ -35,6 +42,11 @@ class ShipsController < ApplicationController
 
   def ship_slice
     params.permit(:max_people, :price, :ship_type, :name)
+  end
+
+  def ship_slice_object
+    temp = params.require(:ship).permit(:max_people, :price, :ship_type, :name)
+    temp.reject { |key,value| value == ""}
   end
 
   def ship_params
