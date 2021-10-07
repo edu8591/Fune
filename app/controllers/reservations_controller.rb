@@ -2,6 +2,7 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
+    authorize @reservation
   end
 
   def create
@@ -11,7 +12,9 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     @reservation.price = calculate_price
     @reservation.negotiation_status = 'apply'
+
     if @reservation.save
+      authorize @reservation
       redirect_to ships_path
       #redireccionar pag para ver reservaciones
     else
