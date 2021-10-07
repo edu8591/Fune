@@ -1,14 +1,15 @@
 class ShipsController < ApplicationController
   def index
     if params[:country].nil?
-      @ships = Ship.where(ship_slice)
+      @ships = policy_scope(Ship).where(ship_slice)
     else
-      @ships = Ship.near(params[:country], 10000)
+      @ships = policy_scope(Ship).near(params[:country], 10_000)
     end
   end
 
   def new
     @ship = Ship.new
+    authorize @ship
   end
 
   def create
@@ -16,6 +17,7 @@ class ShipsController < ApplicationController
     @user = current_user
     @ship.user = @user
     if @ship.save
+      authorize @ship
       redirect_to ship_path(@ship)
     else
       render :new
@@ -26,7 +28,7 @@ class ShipsController < ApplicationController
     @ship = Ship.find(params[:id])
     @ship_images = @ship.images.all
     @reservation = Reservation.new
-
+    authorize @ship
   end
 
   private
