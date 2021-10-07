@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :user, only: [] do
+    resources :reservations, only: :list
+  end
   root to: 'pages#home'
   resources :ships, only: %i[index show new create edit update] do
     resources :reservations, only: :create
