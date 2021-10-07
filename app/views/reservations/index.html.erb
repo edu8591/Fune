@@ -1,0 +1,49 @@
+
+<div class="container">
+  <% if !current_user.owner? %>
+    <% @reservations_as_customer.each do |reservation| %>
+
+
+      <%# link hacia la reservacion  %>
+      <%# inicio del card %>
+      <div class="ship-card mt-3">
+        <%=  cl_image_tag reservation.ship.images.all.first.key if !reservation.ship.images.first.nil?%>
+        <div class="card-ship-info">
+          <h2> <%=reservation.ship.name  %> </h2>
+          <hr>
+          <p><strong><%= reservation.people_in_reservation %></strong> <%= reservation.people_in_reservation > 1 ? "passengers" : "passenger"  %> in the reservation!</p>
+          <p>Total price $<%= reservation.price %></p>
+          <p><%= reservation.invoice.nil? ? "waiting for confirmation" : "Reservation confirmed!"%></p>
+        </div>
+      </div>
+      <%# fin del card %>
+
+
+    <% end %>
+
+  <% else %>
+    <% @reservations_as_owner.each do |reservation| %>
+
+
+      <%# link hacia la reservacion  %>
+      <%# inicio del card %>
+      <div class="ship-card mt-3">
+        <%=  cl_image_tag reservation.ship.images.all.first.key if !reservation.ship.images.first.nil?%>
+        <div class="card-ship-info">
+          <h2> <%=reservation.ship.name  %> </h2>
+          <hr>
+          <p><strong><%= reservation.people_in_reservation %></strong> <%= reservation.people_in_reservation > 1 ? "passengers" : "passenger"  %> in the reservation!</p>
+          <p>Total price $<%= reservation.price %></p>
+          <p><%= reservation.invoice.nil? ? "waiting for confirmation" : "Reservation confirmed!"%></p>
+        </div>
+      </div>
+      <%# fin del card %>
+
+
+    <% end %>
+  <% end %>
+</div>
+
+
+
+

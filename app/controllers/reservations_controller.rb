@@ -5,6 +5,11 @@ class ReservationsController < ApplicationController
     authorize @reservation
   end
 
+  def index
+    @reservations_as_customer = policy_scope(current_user.reservations)
+    @reservations_as_owner = policy_scope(current_user.my_reservations)
+
+  end
   def create
     @reservation = Reservation.new(reservation_params)
     @ship = Ship.find(params[:ship_id])
@@ -19,12 +24,7 @@ class ReservationsController < ApplicationController
       #redireccionar pag para ver reservaciones
     else
       ship_path(params[:ship_id])
-      #render(:controller=>“other_controller”, :action=>“some_action”)
-
-
     end
-
-
   end
 
   private
