@@ -55,3 +55,37 @@
     right: -386px;
     top: -20px;
   }
+
+.ship-card-invoice {
+  overflow: hidden;
+	height: 480px;
+	background: white;
+	box-shadow: 2px 2px 3px rgb(206, 206, 206);
+	align-items: center;
+  width: 700px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  h2 {
+    margin: 20px;
+  }
+}
+.tu-reservacion {
+  margin-top: 30px;
+}
+
+.details-card-reservation {
+    position: relative;
+    top: -209px;
+    left: 44px;
+    font-weight: lighter;
+    h4 {
+      margin-top: 5px;
+      padding: 10px;
+      font-size: 20px;
+    }
+}
