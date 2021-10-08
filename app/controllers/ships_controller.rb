@@ -3,12 +3,9 @@ class ShipsController < ApplicationController
     if params[:country].nil?
       if params[:ship].nil?
         @ships = policy_scope(Ship).where(ship_slice)
-        puts ship_slice
       else
-        puts ship_slice_object
         @ships = policy_scope(Ship).where(ship_slice_object)
       end
-
     else
       @ships = policy_scope(Ship).near(params[:country], 10_000)
     end

@@ -25,12 +25,7 @@ default: &default
     - .gif
     - .tiff
     - .ico
-    - .svg
-    - .eot
-    - .otf
-    - .ttf
-    - .woff
-    - .woff2
+    - .svg3000
 
   extensions:
     - .mjs
