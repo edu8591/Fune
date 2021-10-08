@@ -27,6 +27,11 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def update
+    @reservation =
+    @reservation.negotiation
+  end
+
   private
 
   def reservation_params
