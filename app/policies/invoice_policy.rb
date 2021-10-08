@@ -4,4 +4,20 @@ class InvoicePolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def index?
+    true
+  end
+
+  def show?
+    true
+  end
+
+  def update?
+    false
+  end
+
+  def create?
+    @user.owner?
+  end
 end
