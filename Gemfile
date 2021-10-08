@@ -29,7 +29,6 @@ gem 'pundit'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
-gem 'bootstrap-sass', '3.2.0.2'
 
 gem 'devise'
 gem 'country_select', '~> 6.0'
