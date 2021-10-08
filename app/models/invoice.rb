@@ -1,4 +1,6 @@
 class Invoice < ApplicationRecord
   belongs_to :reservation
-  validates :reservation, :paid, presence: true
+  has_one :ship, through: :reservations
+  validates :reservation, presence: true
+  validates :paid, inclusion: [true, false]
 end

@@ -37,6 +37,7 @@ user4.avatar.attach({io:user4_avatar, filename:'avatar4', content_type:'image/pn
 user5 = User.create!(email:Faker::Internet.email, password:'123456789', ssn:Faker::IDNumber.valid, first_name:Faker::Name.first_name , last_name: Faker::Name.last_name  , phone_number:'0997079516', owner: false, country:'Peru', city: 'Lima', address:'chorrillos', birth_date: Date.new, gender: "female")
 user5_avatar = URI.open("https://source.unsplash.com/120x120/?avatar
 ")
+
 user5.avatar.attach({io:user5_avatar, filename:'avatar5', content_type:'image/png'})
 
 
@@ -46,15 +47,15 @@ Ship.create!(user: user1, max_people: 10, price: 850, ship_type: 'party', name: 
 Ship.create!(user: user1, max_people: 8, price: 650, ship_type: 'party', name: "marsopa", description:"lindo velero para pasar buen fin de semana", longitude:Faker::Address.longitude, latitude: Faker::Address.latitude )
 
 ship = Ship.create!(user: user1, max_people: 6, price: 450, ship_type: 'party', name: "la pinta", description:"lindo velero para pasar buen fin de semana", longitude:Faker::Address.longitude, latitude: Faker::Address.latitude )
-ship_pic = URI.open("https://images.unsplash.com/photo-1623881168429-dcc3b542f826?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8c2hpcHx8fHx8fDE2MzM0NjU0NTU&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600")
-ship_pic2 = URI.open("https://images.unsplash.com/photo-1527685609591-44b0aef2400b?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8c2hpcHx8fHx8fDE2MzM0NjU0ODA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600")
+ship_pic = open("https://images.unsplash.com/photo-1623881168429-dcc3b542f826?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8c2hpcHx8fHx8fDE2MzM0NjU0NTU&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600")
+ship_pic2 = open("https://images.unsplash.com/photo-1527685609591-44b0aef2400b?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8c2hpcHx8fHx8fDE2MzM0NjU0ODA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600")
 ship.images.attach({io:ship_pic, filename:'ship_pic', content_type:'image/png'},{io:ship_pic2, filename:'ship_pic2', content_type:'image/png'})
 
 ship2 = Ship.create!(user: user1, max_people: 20, price: 1500, ship_type: 'party', name: "la nina", description:"lindo velero para pasar buen fin de semana", longitude:Faker::Address.longitude, latitude: Faker::Address.latitude )
 
 
 
-# Reservation.new(user: user2, ship: ship, price: 2500, negotiation_status: "reply", reservation_start: Time.new.next_day(1), reservation_end: Time.new, people_in_reservation: 10)
-# Reservation.new(user: user2, ship: ship2, price: 2500, negotiation_status: "reply", reservation_start: Time.new.next_day(1), reservation_end: Time.new, people_in_reservation: 10)
 
+Reservation.new(user: user2, ship: ship, price: 2500, negotiation_status: "reply", reservation_start: Time.new.next_day(1), reservation_end: Time.new, people_in_reservation: 10)
 puts "all done!"
+

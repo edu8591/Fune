@@ -12,14 +12,17 @@
   justify-content: flex-start;
   align-items: center;
   height: 90px;
+  text-decoration: none;
   a {
     color: black;
   }
-}
-
-.homepage-cards { h5 {
+  h5 {
   margin-left: 15px;
 }
+}
+
+.homepage-cards:hover {
+  box-shadow:  2px 2px 3px rgb(145, 145, 145);
 }
 
 .country-cards-padre {

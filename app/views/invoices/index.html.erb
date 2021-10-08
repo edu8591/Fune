@@ -1,0 +1,34 @@
+<div class="container">
+<h1>Confirm and pay</h1>
+</div>
+
+<div class="container tu-reservacion">
+<h2 >Your reservation:</h2>
+</div>
+
+<div class="container">
+<% @invoices.each do |invoice| %>
+  <%invoice.paid%>
+  <div class="ship-card-invoice">
+    <div class="">
+      <h2><%= invoice.reservation.ship.name.capitalize%></h2>
+      <hr>
+    </div>
+
+    <%= image_tag "https://source.unsplash.com/featured/?yacht", style:"height: 228px; width: 185px; margin-left: 5px; position: relative; left: -228px; top: -52px "%>
+
+      <div class="details-card-reservation" >
+        <h4>Date start: <%= invoice.reservation.reservation_start.strftime("%d de %b") %></h4>
+        <h4>Date end: <%= invoice.reservation.reservation_end.strftime("%d de %b")%></h4>
+        <h4>Quantity: <%= invoice.reservation.people_in_reservation%> Persons</h4>
+      </div>
+      <div class="container">
+        <h4 style="position: relative; bottom: 67px; left: 300px;">Total: $ <%= invoice.reservation.price%></h4>
+      </div>
+    </div>
+  <% end %>
+  </div>
+
+
+
+<%= link_to "Confirm Reservation"%>
