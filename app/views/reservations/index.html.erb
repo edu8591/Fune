@@ -10,13 +10,24 @@
       <%# link hacia la reservacion  %>
       <%# inicio del card %>
       <div class="ship-card mt-3">
-        <%=  cl_image_tag reservation.ship.images.all.first.key if !reservation.ship.images.first.nil?%>
-        <div class="card-ship-info">
-          <h2> <%=reservation.ship.name  %> </h2>
+        <%=  cl_image_tag reservation.ship.images.all.first.key, class: 'm-0' if !reservation.ship.images.first.nil?%>
+        <div class="card-ship-info ">
+          <div class="d-flex justify-content-between">
+            <h2 class="pb-0 mb-0"> <%=reservation.ship.name  %> </h2>
+            <p class="mr-3 text-primary"><%= reservation.invoice.nil? ? "waiting for confirmation" : "Reservation confirmed!"%></p>
+          </div>
           <hr>
-          <p><strong><%= reservation.people_in_reservation %></strong> <%= reservation.people_in_reservation > 1 ? "passengers" : "passenger"  %> in the reservation!</p>
-          <p>Total price $<%= reservation.price %></p>
-          <p><%= reservation.invoice.nil? ? "waiting for confirmation" : "Reservation confirmed!"%></p>
+          <div class="row">
+            <div class="col">
+              <p><strong><%= reservation.people_in_reservation %></strong> <%= reservation.people_in_reservation > 1 ? "passengers" : "passenger"  %> in the reservation!</p>
+              <p>Total price $<%= reservation.price %></p>
+            </div>
+            <div class="col">
+              <p><strong>from: </strong><%= reservation.reservation_start.strftime("%d de %b")   %></p>
+              <p><strong>to: </strong><%= reservation.reservation_end.strftime("%d de %b")   %></p>
+            </div>
+          </div>
+
         </div>
       </div>
       <%# fin del card %>
@@ -31,7 +42,7 @@
       <%# link hacia la reservacion  %>
       <%# inicio del card %>
       <div class="ship-card mt-3">
-        <%=  cl_image_tag reservation.ship.images.all.first.key if !reservation.ship.images.first.nil?%>
+        <%=  cl_image_tag reservation.ship.images.all.first.key, class: 'm-0' if !reservation.ship.images.first.nil?%>
         <div class="card-ship-info ">
           <div class="d-flex justify-content-between">
             <h2 class="pb-0 mb-0"> <%=reservation.ship.name  %> </h2>
@@ -44,8 +55,12 @@
               <p>Total price $<%= reservation.price %></p>
             </div>
             <div class="col">
-              <p><strong>from</strong><%= reservation.reservation_start  %></p>
-              <p><strong>to</strong><%= reservation.reservation_end  %></p>
+              <p><strong>from: </strong><%= reservation.reservation_start.strftime("%d de %b")   %></p>
+              <p><strong>to: </strong><%= reservation.reservation_end.strftime("%d de %b")   %></p>
+              <% if reservation.negotiation_status == "apply" %>
+                <%= link_to "create invoice",reservation_invoices_path(reservation),:method =>"post", :class => "btn btn-primary text-white ml-5 mt-3 mb-3" %>
+
+              <% end %>
             </div>
           </div>
 
