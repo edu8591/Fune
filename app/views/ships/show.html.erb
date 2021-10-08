@@ -2,7 +2,7 @@
   <div class ="mt-3">
     <h1><%= @ship.name %></h1>
     <% result =  Geocoder.search([@ship.latitude, @ship.longitude]) %>
-    <p><i class="fas fa-star"> </i> 4.5/5 (420 reviews) | <strong><%= result.first.country %>, <%= result.first.state %></strong></p>
+    <p><i class="fas fa-star"> </i> 4.5/5 (420 reviews) | <strong><%= result.first.country if !@data.nil?%>, <%= result.first.state if !@data.nil? %></strong></p>
   </div>
 
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
