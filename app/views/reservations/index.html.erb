@@ -1,5 +1,8 @@
 
-<div class="container">
+<div class="d-flex justify-content-center ">
+  <div class="col6">
+
+
   <% if !current_user.owner? %>
     <% @reservations_as_customer.each do |reservation| %>
 
@@ -29,12 +32,23 @@
       <%# inicio del card %>
       <div class="ship-card mt-3">
         <%=  cl_image_tag reservation.ship.images.all.first.key if !reservation.ship.images.first.nil?%>
-        <div class="card-ship-info">
-          <h2> <%=reservation.ship.name  %> </h2>
+        <div class="card-ship-info ">
+          <div class="d-flex justify-content-between">
+            <h2 class="pb-0 mb-0"> <%=reservation.ship.name  %> </h2>
+            <p class="mt-3 btn btn text-primary"><%= reservation.invoice.nil? ? "waiting for confirmation" : "Reservation confirmed!"%></p>
+          </div>
           <hr>
-          <p><strong><%= reservation.people_in_reservation %></strong> <%= reservation.people_in_reservation > 1 ? "passengers" : "passenger"  %> in the reservation!</p>
-          <p>Total price $<%= reservation.price %></p>
-          <p><%= reservation.invoice.nil? ? "waiting for confirmation" : "Reservation confirmed!"%></p>
+          <div class="row">
+            <div class="col">
+              <p><strong><%= reservation.people_in_reservation %></strong> <%= reservation.people_in_reservation > 1 ? "passengers" : "passenger"  %> in the reservation!</p>
+              <p>Total price $<%= reservation.price %></p>
+            </div>
+            <div class="col">
+              <p><strong>from</strong><%= reservation.reservation_start  %></p>
+              <p><strong>to</strong><%= reservation.reservation_end  %></p>
+            </div>
+          </div>
+
         </div>
       </div>
       <%# fin del card %>
@@ -42,8 +56,5 @@
 
     <% end %>
   <% end %>
+  </div>
 </div>
-
-
-
-
