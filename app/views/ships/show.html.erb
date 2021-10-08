@@ -1,7 +1,8 @@
 <div class="container">
   <div class ="mt-3">
     <h1><%= @ship.name %></h1>
-    <p><i class="fas fa-star"> </i> 4.5/5 (320 reviews) | <strong>ponemos aqui nombre ubicacion? ej: Bariloche, Argentina</strong></p>
+    <% result =  Geocoder.search([@ship.latitude, @ship.longitude]) %>
+    <p><i class="fas fa-star"> </i> 4.5/5 (420 reviews) | <strong><%= result.first.country %>, <%= result.first.state %></strong></p>
   </div>
 
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -38,8 +39,20 @@
   </a>
 </div>
   <div>
-    <div class='row mt-3 pb-3 ' >
-      <div class ="col-7 owner-info border-bottom"><p>Antique Galleon owned by <%= @ship.user.first_name %></p> </div>
+    <div class='row mt-3 pb-3 bg-white mb-5' >
+      <div class ="col-7 owner-info  ">
+        <p class="border-bottom"><%= @ship.name %> de <%= @ship.user.first_name %>
+        </p>
+
+        <ul>
+          <li>Maximum: <%= @ship.max_people %> persona(s)</li>
+          <li>Price per day: <%= @ship.price %> per day</li>
+          <li>Type of ship: <%= @ship.ship_type %> </li>
+        </ul>
+        <div class="ship-information" >
+          <h4>Descripcion: <%= @ship.description %></h4>
+        </div>
+      </div>
       <div class="col-1 border-bottom"> <%= cl_image_tag @ship.user.avatar.key, class: 'rounded-circle', height: 50, width:50%></div>
       <% unless @ship.user == current_user %>
       <div class ="col-4 bg-white reservations">
@@ -67,11 +80,7 @@
       </div>
       <% end %>
     </div>
-    <div class="ship-information" style="height: 2000px">
-      <p>display information about the ship</p>
 
-
-    </div>
 
 
 

@@ -28,8 +28,10 @@ class ReservationsController < ApplicationController
   end
 
   def update
-    @reservation =
-    @reservation.negotiation
+    @reservation = Reservation.find(params[:id])
+    @reservation.update(negotiation_status: "confirmation")
+    authorize @reservation
+    redirect_to reservations_path
   end
 
   private

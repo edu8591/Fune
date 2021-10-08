@@ -14,7 +14,7 @@ class ReservationPolicy < ApplicationPolicy
   end
 
   def update?
-    !@user.owner?
+    @user.owner?
   end
 
   def create?
