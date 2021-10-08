@@ -1,0 +1,10 @@
+<div class="ship-card mt-3">
+        <%=  cl_image_tag reservation.ship.images.all.first.key, class:'m-0' if !reservation.ship.images.first.nil? %>
+        <div class="card-ship-info">
+          <h2> <%=reservation.ship.name  %> </h2>
+          <hr>
+          <p><strong><%= reservation.people_in_reservation %></strong> <%= reservation.people_in_reservation > 1 ? "passengers" : "passenger"  %> in the reservation!</p>
+          <p>Total price $<%= reservation.price %></p>
+          <p><%= reservation.invoice.nil? ? "waiting for confirmation" : "Reservation confirmed!"%></p>
+    </div>
+</div>

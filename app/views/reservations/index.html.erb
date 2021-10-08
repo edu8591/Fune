@@ -1,13 +1,13 @@
+<%# ponerlo en un parcial  %>
 
 <div class="container">
   <% if !current_user.owner? %>
     <% @reservations_as_customer.each do |reservation| %>
 
-
       <%# link hacia la reservacion  %>
       <%# inicio del card %>
       <div class="ship-card mt-3">
-        <%=  cl_image_tag reservation.ship.images.all.first.key if !reservation.ship.images.first.nil?%>
+        <%=  cl_image_tag reservation.ship.images.all.first.key, class:'m-0' if !reservation.ship.images.first.nil? %>
         <div class="card-ship-info">
           <h2> <%=reservation.ship.name  %> </h2>
           <hr>
@@ -24,11 +24,11 @@
   <% else %>
     <% @reservations_as_owner.each do |reservation| %>
 
-
+      <%= reservation.invoice %>
       <%# link hacia la reservacion  %>
       <%# inicio del card %>
       <div class="ship-card mt-3">
-        <%=  cl_image_tag reservation.ship.images.all.first.key if !reservation.ship.images.first.nil?%>
+        <%=  cl_image_tag reservation.ship.images.all.first.key, class:'m-0' if !reservation.ship.images.first.nil?%>
         <div class="card-ship-info">
           <h2> <%=reservation.ship.name  %> </h2>
           <hr>
