@@ -8,6 +8,7 @@
   width: 700px;
   border-radius: 8px;
 
+
   a {
     text-decoration: none;
     color: black;
@@ -30,6 +31,7 @@
 
 	}
 
+
 	p {
 		font-size: 14px;
 		line-height: 1.4;
@@ -44,6 +46,9 @@
     margin-left: 10px;
 	}
 }
+ .ship-card:hover {
+    box-shadow:  2px 2px 3px rgb(145, 145, 145);
+  }
 .heart-icon {
     position: relative;
     top: -111px;

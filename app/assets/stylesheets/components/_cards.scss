@@ -6,15 +6,18 @@
   h5 {
     text-align: center;
   }
-}
-
-.card-type-ship{
   a {
     color: black;
     font-weight: lighter;
     padding: 5px;
   }
 }
+ .card-type-ship:hover {
+   height: 305px;
+   width: 305px;
+ }
+
+
 
 
 .cards-type-ships-padre {
@@ -71,6 +74,7 @@
   height: 330px;
   border-radius: 12px;
   margin: 15px;
+  text-decoration: none;
 }
 
 .card-trip > img {
