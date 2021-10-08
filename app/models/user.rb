@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :reservations
   has_many :my_reservations, through: :ships, source: :reservations
   has_many :invoices, through: :reservations
+  has_many :my_reservations, through: :ships, source: :reservations
   validates :ssn, uniqueness: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
