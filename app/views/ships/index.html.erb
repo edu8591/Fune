@@ -31,7 +31,7 @@
 
     <div class="ship-card mt-3">
       <%= link_to ship_path(ship) do %>
-      <%= cl_image_tag ship.images.first.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <%= cl_image_tag ship.images.first.key, class: "ml-0" %>
       <div class="card-ship-info">
         <h2 class><%= ship.name.capitalize %></h2>
         <hr>

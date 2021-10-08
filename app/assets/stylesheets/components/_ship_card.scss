@@ -17,8 +17,9 @@
 	img {
 		height: 100%;
 		width: 220px;
-		object-fit: cover;
+		size: cover;
     margin-left: 10px;
+    border-radius: 8px;
 	}
 
 	h2 {
