@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :ships
   has_many :reservations
   has_many :my_reservations, through: :ships, source: :reservations
+  has_many :my_invoices, through: :my_reservations, source: :invoices
   has_many :invoices, through: :reservations
   has_many :my_reservations, through: :ships, source: :reservations
   validates :ssn, uniqueness: true
