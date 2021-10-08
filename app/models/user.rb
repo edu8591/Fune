@@ -7,9 +7,11 @@ class User < ApplicationRecord
   GENDERS = %w[male female other]
   validates :ssn, :email, :password, :first_name, :last_name, :phone_number, :country, :city, :address, :birth_date, presence: true
   validates :phone_number, :ssn, format: { with: /\d+/ }, length: {minimum: 9, maximum: 12}
-  has_many :reservations
   has_many :ships
+  has_many :reservations
+  has_many :my_reservations, through: :ships, source: :reservations
   has_many :invoices, through: :reservations
+  has_many :my_reservations, through: :ships, source: :reservations
   validates :ssn, uniqueness: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
