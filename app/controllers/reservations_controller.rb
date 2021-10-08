@@ -6,8 +6,8 @@ class ReservationsController < ApplicationController
   end
 
   def index
-    @reservations_as_customer = policy_scope(current_user.reservations)
-    @reservations_as_owner = policy_scope(current_user.my_reservations)
+    @reservations_as_customer = policy_scope(current_user.reservations.includes(:invoice))
+    @reservations_as_owner = policy_scope(current_user.my_reservations.includes(:invoice))
 
   end
   def create
@@ -25,6 +25,11 @@ class ReservationsController < ApplicationController
     else
       ship_path(params[:ship_id])
     end
+  end
+
+  def update
+    @reservation =
+    @reservation.negotiation
   end
 
   private
