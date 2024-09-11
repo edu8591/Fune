@@ -23,7 +23,8 @@ default: &default
 
 development:
   <<: *default
-  database: Fune_development
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: Fune_development #agregar esta linea nuevamente en local
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
