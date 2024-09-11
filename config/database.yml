@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: Fune_production
-  username: Fune
-  password: <%= ENV['FUNE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
