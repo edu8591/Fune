@@ -35,30 +35,100 @@ user5_avatar = URI.open("https://randomuser.me/api/portraits/women/60.jpg")
 
 user5.avatar.attach({io:user5_avatar, filename:'avatar5', content_type:'image/png'})
 
-def ship_pic
- URI.open("https://images.unsplash.com/photo-1623881168429-dcc3b542f826?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8c2hpcHx8fHx8fDE2MzM0NjU0NTU&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600")
-end
 
-puts "creating ships"
-
-def ship_pic2
-  URI.open("https://images.unsplash.com/photo-1527685609591-44b0aef2400b?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8c2hpcHx8fHx8fDE2MzM0NjU0ODA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600")
-end
 
 ship1 = Ship.create!(user: user1, max_people: 10, price: 850, ship_type: 'party', name: "la vaquita", description:"lindo velero para pasar buen fin de semana", longitude:Faker::Address.longitude, latitude: Faker::Address.latitude)
-ship1.images.attach({io:ship_pic, filename:'ship_pic', content_type:'image/png'},{io:ship_pic2, filename:'ship_pic2', content_type:'image/png'})
+
+ship1.images.attach({
+    io:URI.open("https://images.boatsgroup.com/resize/1/93/8/2015-leopard-48-sail-9539308-20240907113528753-1_XLARGE.jpg?w=1028&h=685&t=1725734558000&exact&format=webp"),
+    filename:'ship_pic',
+    content_type:'image/png'
+  },
+  {
+    io:URI.open("https://images.boatsgroup.com/resize/1/93/8/2015-leopard-48-sail-9539308-20240907113422945-1_XLARGE.jpg?w=1028&h=685&t=1725734741000&exact&format=webp"),
+    filename:'ship_pic2',
+    content_type:'image/png'
+  },
+  {
+    io:URI.open("https://images.boatsgroup.com/resize/1/93/8/2015-leopard-48-sail-9539308-20240907112635993-1_XLARGE.jpg?w=1028&h=685&t=1725734740000&exact&format=webp"),
+    filename:'ship_pic3',
+    content_type:'image/png'
+  },
+  {
+    io:URI.open("https://images.boatsgroup.com/resize/1/93/8/2015-leopard-48-sail-9539308-20240907113531782-1_XLARGE.jpg?w=1028&h=685&t=1725734558000&exact&format=webp"),
+    filename:'ship_pic4',
+    content_type:'image/png'
+  })
 sleep(5)
 
+
 ship2 = Ship.create!(user: user1, max_people: 8, price: 650, ship_type: 'party', name: "marsopa", description:"lindo velero para pasar buen fin de semana", longitude:Faker::Address.longitude, latitude: Faker::Address.latitude )
-ship2.images.attach({io:ship_pic, filename:'ship_pic', content_type:'image/png'},{io:ship_pic2, filename:'ship_pic2', content_type:'image/png'})
+ship2.images.attach({
+    io:URI.open("https://images.boatsgroup.com/resize/1/91/71/9289171_20240306133309383_1_XLARGE.jpg?w=1028&h=685&t=1709760805000&exact&format=webp"),
+    filename:'ship_pic',
+    content_type:'image/png'
+  },
+  {
+    io:URI.open("https://images.boatsgroup.com/resize/1/91/71/9289171_20240306133150293_1_XLARGE.jpg?w=1028&h=685&t=1709760711000&exact&format=webp"),
+    filename:'ship_pic2',
+    content_type:'image/png'
+  },
+  {
+    io:URI.open("https://images.boatsgroup.com/resize/1/91/71/9289171_20240306133202399_1_XLARGE.jpg?w=1028&h=685&t=1709760723000&exact&format=webp"),
+    filename:'ship_pic3',
+    content_type:'image/png'
+  },
+  {
+    io:URI.open("https://images.boatsgroup.com/resize/1/91/71/9289171_20240306133205374_1_XLARGE.jpg?w=1028&h=685&t=1709760726000&exact&format=webp"),
+    filename:'ship_pic4',
+    content_type:'image/png'
+  })
 sleep(5)
 
 ship3 = Ship.create!(user: user1, max_people: 6, price: 450, ship_type: 'party', name: "la pinta", description:"lindo velero para pasar buen fin de semana", longitude:Faker::Address.longitude, latitude: Faker::Address.latitude )
-ship3.images.attach({io:ship_pic, filename:'ship_pic', content_type:'image/png'},{io:ship_pic2, filename:'ship_pic2', content_type:'image/png'})
+ship3.images.attach({
+    io:URI.open("https://hanseyachts.hr/images/ownership/yacht-images/hanse-588/hanse-588-1.jpg"),
+    filename:'ship_pic',
+    content_type:'image/png'
+  },
+  {
+    io:URI.open("https://hanseyachts.hr/images/ownership/yacht-images/hanse-588/hanse-588-4.jpg"),
+    filename:'ship_pic2',
+    content_type:'image/png'
+  },
+  {
+    io:URI.open("https://hanseyachts.hr/images/ownership/yacht-images/hanse-588/hanse-588-3.jpg"),
+    filename:'ship_pic3',
+    content_type:'image/png'
+  },
+  {
+    io:URI.open("https://hanseyachts.hr/images/ownership/yacht-images/hanse-588/hanse-588-5.jpg"),
+    filename:'ship_pic4',
+    content_type:'image/png'
+  })
 sleep(5)
 
 ship4 = Ship.create!(user: user1, max_people: 20, price: 1500, ship_type: 'party', name: "la nina", description:"lindo velero para pasar buen fin de semana", longitude:Faker::Address.longitude, latitude: Faker::Address.latitude )
-ship4.images.attach({io:ship_pic, filename:'ship_pic', content_type:'image/png'},{io:ship_pic2, filename:'ship_pic2', content_type:'image/png'})
+ship4.images.attach({
+    io:URI.open("https://images.boatsgroup.com/resize/1/6/99/8030699_20210913094727456_1_XLARGE.jpg?w=1028&h=685&t=1642374257000&format=webp"),
+    filename:'ship_pic',
+    content_type:'image/png'
+  },
+  {
+    io:URI.open("https://images.boatsgroup.com/resize/1/47/33/8184733_20220115201943933_1_XLARGE.jpg?w=1028&h=685&t=1642374258000&format=webp"),
+    filename:'ship_pic2',
+    content_type:'image/png'
+  },
+  {
+    io:URI.open("https://images.boatsgroup.com/resize/1/47/33/8184733_20220115201928979_1_XLARGE.jpg?w=1028&h=685&t=1668564173000&format=webp"),
+    filename:'ship_pic3',
+    content_type:'image/png'
+  },
+  {
+    io:URI.open("https://images.boatsgroup.com/resize/1/6/99/8030699_20210913095243095_1_XLARGE.jpg?w=1028&h=685&t=1668564173000&format=webp"),
+    filename:'ship_pic4',
+    content_type:'image/png'
+  })
 sleep(5)
 
 Reservation.new(user: user2, ship: ship1, price: 2500, negotiation_status: "reply", reservation_start: Time.new.next_day(1), reservation_end: Time.new, people_in_reservation: 10)
